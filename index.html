@@ -46,13 +46,13 @@
 	</div>
 		<div id="sizer"></div>
 	<script type="text/javascript">
+		var scrollPos = 0;
 		$( window ).scroll(function() {
 			var scrollfactor = 0.2;
 			var scrolling = ($(window).scrollTop()*scrollfactor);
 			if(scrolling > 330) scrolling = 330;
 			if(scrolling < 0) scrolling = 0;
-			var scrollPos = scrolling/110;
-			console.log(Math.round(scrolling/110)+" - "+scrolling/110);
+			scrollPos = scrolling/110;
 			$("#selector").css("margin-top", scrolling+177 + "px");
 			var cube1opacity = 0;
 			var cube2opacity = 0;
@@ -75,6 +75,14 @@
 			$( ".cube3" ).css( "opacity", cube3opacity );
 			$( ".cube4" ).css( "opacity", cube4opacity );
 		});	
+		$(window).scroll(function() {
+		    clearTimeout($.data(this, 'scrollTimer'));
+		    //$("html, body").stop();
+		    $.data(this, 'scrollTimer', setTimeout(function() {
+		        //console.log("Haven't scrolled in 250ms! " + Math.round(scrollPos));
+		        $("html, body").animate({ scrollTop: Math.round(scrollPos)*5*110 }, 200);
+		    }, 90));
+		});
 	</script>
 </body>
 </html>
