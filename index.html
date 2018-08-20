@@ -17,72 +17,80 @@
 				<div></div>
 			</div>
 		</div>
+		
+
 		<div class="content cube1">
+			<div>
 			<img src="images/led-cube.png" width="220px"><br>
 			<span class="cubeblue">Yes!</span> The infamous LEDCube continues its journey!<br>
 			And there are many great things ahead!
+			</div>
 		</div>
+		<div class="cubeblock cube1" style="background-image:url('images/cube-game.png');"></div>
 		
+
 		<div class="content cube2">
 			<span class="big">Meet us @ <span class="cubeblue">Gamescom 2018</span></span><br>
 			Hall 10.2 - Booth B031<br>
 			Hochschule Kempten
 		</div>
+		<div class="cubeblock cube2" style="background-image:url('images/cube-meetup.png');"></div>
 		
+
 		<div class="content cube3">
 			<span class="big">More information coming soon!</span>
 		</div>
-		
+		<div class="cubeblock cube3" style="background-image:url('images/cube-warning.png');"></div>
+				
 		<div class="content cube4">
 			<span class="big">Any Questions?<br>Contact us!</span><br>
 			<img src=images/contact.png width="140px">
 		</div>
-		
-		
-		<div class="cubeblock cube1" style="background-image:url('images/cube-game.png');"></div>
-		<div class="cubeblock cube2" style="background-image:url('images/cube-meetup.png');"></div>
-		<div class="cubeblock cube3" style="background-image:url('images/cube-warning.png');"></div>
 		<div class="cubeblock cube4" style="background-image:url('images/cube-heart.png');"></div>
+		
 	</div>
-		<div id="sizer"></div>
+	<div id="sizer"></div>
 	<script type="text/javascript">
 		var scrollPos = 0;
-		$( window ).scroll(function() {
-			var scrollfactor = 0.2;
-			var scrolling = ($(window).scrollTop()*scrollfactor);
-			if(scrolling > 330) scrolling = 330;
-			if(scrolling < 0) scrolling = 0;
-			scrollPos = scrolling/110;
-			$("#selector").css("margin-top", scrolling+177 + "px");
-			var cube1opacity = 0;
-			var cube2opacity = 0;
-			var cube3opacity = 0;
-			var cube4opacity = 0;
-			var cube1opacity = 1-(Math.min(Math.max(scrollPos, 0), 0.8)*1.25);
-			
-			if(scrollPos > 0.2) cube2opacity = (scrollPos-0.2)*1.25;
-			if(scrollPos > 1.0) cube2opacity = 1-(scrollPos-1)*1.25;
-			cube2opacity = (Math.min(Math.max(cube2opacity, 0), 1));
-			
-			if(scrollPos > 1.2) cube3opacity = (scrollPos-1.2)*1.25;
-			if(scrollPos > 2.0) cube3opacity = 1-(scrollPos-2)*1.25;
-			cube3opacity = (Math.min(Math.max(cube3opacity, 0), 1));
-			
-			if(scrollPos > 2.2) cube4opacity = (scrollPos-2.2)*1.25;
-			cube4opacity = (Math.min(Math.max(cube4opacity, 0), 1));
-			$( ".cube1" ).css( "opacity", cube1opacity );
-			$( ".cube2" ).css( "opacity", cube2opacity );
-			$( ".cube3" ).css( "opacity", cube3opacity );
-			$( ".cube4" ).css( "opacity", cube4opacity );
-		});	
-		$(window).scroll(function() {
-		    clearTimeout($.data(this, 'scrollTimer'));
-		    //$("html, body").stop();
-		    $.data(this, 'scrollTimer', setTimeout(function() {
-		        //console.log("Haven't scrolled in 250ms! " + Math.round(scrollPos));
-		        $("html, body").animate({ scrollTop: Math.round(scrollPos)*5*110 }, 200);
-		    }, 90));
+		var screenWidth = $(window).width();
+		$(window).resize(function() {
+		  screenWidth = $(window).width();
 		});
+		$( window ).scroll(function() {
+			if(screenWidth>1400){
+				var scrollfactor = 0.2;
+				var scrolling = ($(window).scrollTop()*scrollfactor);
+				if(scrolling > 330) scrolling = 330;
+				if(scrolling < 0) scrolling = 0;
+				scrollPos = scrolling/110;
+				$("#selector").css("margin-top", scrolling+177 + "px");
+				var cube1opacity = 0;
+				var cube2opacity = 0;
+				var cube3opacity = 0;
+				var cube4opacity = 0;
+				var cube1opacity = 1-(Math.min(Math.max(scrollPos, 0), 0.8)*1.25);
+				
+				if(scrollPos > 0.2) cube2opacity = (scrollPos-0.2)*1.25;
+				if(scrollPos > 1.0) cube2opacity = 1-(scrollPos-1)*1.25;
+				cube2opacity = (Math.min(Math.max(cube2opacity, 0), 1));
+				
+				if(scrollPos > 1.2) cube3opacity = (scrollPos-1.2)*1.25;
+				if(scrollPos > 2.0) cube3opacity = 1-(scrollPos-2)*1.25;
+				cube3opacity = (Math.min(Math.max(cube3opacity, 0), 1));
+				
+				if(scrollPos > 2.2) cube4opacity = (scrollPos-2.2)*1.25;
+				cube4opacity = (Math.min(Math.max(cube4opacity, 0), 1));
+				$( ".cube1" ).css( "opacity", cube1opacity );
+				$( ".cube2" ).css( "opacity", cube2opacity );
+				$( ".cube3" ).css( "opacity", cube3opacity );
+				$( ".cube4" ).css( "opacity", cube4opacity );
+				
+				clearTimeout($.data(this, 'scrollTimer'));
+			    $.data(this, 'scrollTimer', setTimeout(function() {
+			        $("html, body").animate({ scrollTop: Math.round(scrollPos)*5*110 }, 200);
+			    }, 90));
+			}
+		});	
 	</script>
 </body>
 </html>

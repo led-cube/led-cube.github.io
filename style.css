@@ -92,3 +92,78 @@ div#contentwrapper{
 .cube4{
 	opacity: 0.0;
 }
+
+
+@media screen and (max-width: 1400px) {
+	#sizer{
+		display: none;
+	}
+	div#contentwrapper{
+		width: 100vw;
+		position: relative;
+		height: 100vh;
+		left: 0;
+		transform: none;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	.sidebar{
+		background-image: none !important;
+		height: 50px;
+		width: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	#selector{
+		display: none;
+	}
+	.logo{
+
+	}
+	.content{
+		font-size: 1.3em;
+		width: 80%;
+		position: relative;
+		left: 0;
+		top: 0;
+		margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 10px;
+	    height: 30vh;
+	    padding-top: 15vh;	
+	}
+	.content div{
+		
+	}
+	.content div img{
+		padding: 5px;
+	}
+	.cubeblock{
+		background-size: contain;
+		background-position: left top;
+		background-repeat: no-repeat;
+		top: 0%;
+		margin-top: -20vh;
+		position: relative;
+		right: 0;
+		bottom: 0;
+		z-index: -1000;
+		width: 140%;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 80vh;
+		opacity: 1.0 !important;
+	}
+	.cube1{
+		opacity: 1.0 !important;
+	}
+	.cube2{
+		opacity: 1.0 !important;
+	}
+	.cube3{
+		opacity: 1.0 !important;
+	}
+	.cube4{
+		opacity: 1.0 !important;
+	}
+}
