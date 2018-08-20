@@ -128,9 +128,9 @@ div#contentwrapper{
 		top: 0;
 		margin-left: auto;
 	    margin-right: auto;
-	    margin-top: 10px;
+	    margin-top: 140px;
 	    height: 30vh;
-	    padding-top: 15vh;	
+	    padding-top: 0;	
 	}
 	.content div{
 		
@@ -139,8 +139,8 @@ div#contentwrapper{
 		padding: 5px;
 	}
 	.cubeblock{
-		background-size: contain;
-		background-position: left top;
+		background-size: 140% auto;
+		background-position: center top;
 		background-repeat: no-repeat;
 		top: 0%;
 		margin-top: -20vh;
@@ -148,7 +148,7 @@ div#contentwrapper{
 		right: 0;
 		bottom: 0;
 		z-index: -1000;
-		width: 140%;
+		width: 100vw;
 		left: 50%;
 		transform: translateX(-50%);
 		height: 80vh;
