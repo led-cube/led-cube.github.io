@@ -6,6 +6,18 @@ body {
 .cubeblue{
 	color: #52eff2;
 }
+a.subscribelink:visited, a.subscribelink:active, a.subscribelink:link{
+	display: inline-block;
+	margin-top: 10px;
+	border-radius: 4px;
+	padding: 3px 10px;
+	background-color: #00A6A7;
+	color: white;
+	text-decoration: none;
+}
+a.subscribelink:hover{
+	background-color: #52eff2;
+}
 .big{
 	font-size: 2em;
 }
@@ -134,10 +146,10 @@ div#contentwrapper{
 	    margin-right: auto;
 	    margin-top: 15vh;
 	    height: 30vh;
-	    padding-top: 0;	
+	    padding-top: 0;
 	}
 	.content div{
-		
+
 	}
 	.content div img{
 		padding: 5px;
